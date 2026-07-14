@@ -1,0 +1,13 @@
+{
+  "name": "@obp/repack",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Installer → WGB import pipeline for Open Browser Porter: format detection, GOG/Inno extraction, manifest/registry synthesis.",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "@obp/formats": "workspace:*"
+  }
+}

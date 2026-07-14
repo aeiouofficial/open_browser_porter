@@ -1,0 +1,84 @@
+/**
+ * Undo Inno Setup call/jmp compression on executables — port of stream/exefilter.hpp inno_exe_decoder_5200(true).
+ */
+
+const BLOCK_SIZE = 0x10000;
+
+/** InstructionFilter5309 — Inno Setup ≥ 5.3.9 (flip_high_byte = true). */
+export class InnoExeDecoder5309 {
+    private offset = 0;
+    private flushBytes = 0;
+    private buffer = new Uint8Array(4);
+
+    push(input: Uint8Array): Uint8Array {
+        const out: number[] = [];
+        let i = 0;
+
+        while (i < input.length || this.flushBytes !== 0) {
+            if (this.flushBytes > 0 && this.flushBytes <= 4) {
+                out.push(this.buffer[4 - this.flushBytes]!);
+                this.flushBytes--;
+                continue;
+            }
+
+            if (this.flushBytes < 0) {
+                const need = -this.flushBytes;
+                const take = Math.min(need, input.length - i);
+                for (let j = 0; j < take; j++) {
+                    this.buffer[4 + this.flushBytes + j] = input[i + j]!;
+                }
+                this.flushBytes += take;
+                i += take;
+                this.offset += take;
+                if (this.flushBytes < 0) break;
+                this.applyAddressTransform();
+                this.flushBytes = 4;
+                continue;
+            }
+
+            if (i >= input.length) break;
+
+            const byte = input[i++]!;
+            out.push(byte);
+            this.offset++;
+
+            if (byte !== 0xe8 && byte !== 0xe9) continue;
+
+            const blockLeft = BLOCK_SIZE - ((this.offset - 1) % BLOCK_SIZE);
+            if (blockLeft < 5) continue;
+
+            this.flushBytes = -4;
+        }
+
+        return new Uint8Array(out);
+    }
+
+    /** Flush trailing call/jmp operand bytes at end of stream — innoextract end-of-stream path. */
+    finish(): Uint8Array {
+        const out: number[] = [];
+        while (this.flushBytes > 0 && this.flushBytes <= 4) {
+            out.push(this.buffer[4 - this.flushBytes]!);
+            this.flushBytes--;
+        }
+        return new Uint8Array(out);
+    }
+
+    private applyAddressTransform(): void {
+        if (this.buffer[3] === 0x00 || this.buffer[3] === 0xff) {
+            const addr = this.offset & 0xffffff;
+            let rel = this.buffer[0]! | (this.buffer[1]! << 8) | (this.buffer[2]! << 16);
+            rel = (rel - addr) >>> 0;
+            this.buffer[0] = rel & 0xff;
+            this.buffer[1] = (rel >> 8) & 0xff;
+            this.buffer[2] = (rel >> 16) & 0xff;
+            if (rel & 0x800000) {
+                this.buffer[3] = (~this.buffer[3]!) & 0xff;
+            }
+        }
+    }
+}
+
+/** setup/data.cpp — CallInstructionOptimized (≥ 4.1.8) stored at bit 5 in our flag ladder. */
+export function needsExeFilter(options: number): boolean {
+    return (options & (1 << 5)) !== 0;
+}

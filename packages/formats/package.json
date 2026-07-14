@@ -1,0 +1,17 @@
+{
+  "name": "@obp/formats",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Binary format parsers for Open Browser Porter — Inno Setup, ISO9660+CUE, InstallShield, FreeArc, unpack-WASM bindings. No emulator/DOM dependencies.",
+  "exports": {
+    "./*": "./src/*/index.ts",
+    "./inno/entries/*": "./src/inno/entries/*.ts",
+    "./inno/check-lang": "./src/inno/check-lang.ts",
+    "./unpack/source": "./src/unpack/source.ts",
+    "./wgb/*": "./src/wgb/*.ts"
+  },
+  "dependencies": {
+    "pako": "^2.1.0"
+  }
+}
