@@ -1,0 +1,9 @@
+# Cloudflare Pages headers.
+# Cross-origin isolation is REQUIRED: Open Browser Porter uses SharedArrayBuffer (the
+# guest worker, the SAB audio ring, the SAB I/O worker). Without COOP/COEP the
+# page is not cross-origin isolated, SharedArrayBuffer is unavailable, and the
+# emulator will not start. Range requests (WGB streaming) are served by
+# Cloudflare automatically for static assets.
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp

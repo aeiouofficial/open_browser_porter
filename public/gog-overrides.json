@@ -1,0 +1,11 @@
+{
+  "$schema": "./gog-overrides.schema.json",
+  "1207659963": {
+    "comment": "Carmageddon 2: Carpocalypse Now — fill in once first boot is tested",
+    "manifest": {
+      "emulator": {
+        "screenResolution": { "width": 640, "height": 480, "bpp": 16 }
+      }
+    }
+  }
+}

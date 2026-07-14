@@ -1,0 +1,136 @@
+[
+  {
+    "id": "revolt",
+    "name": "Re-Volt",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/re-volt-demo.wgb",
+    "coverUrl": "/covers/re-volt-box.jpg",
+    "description": "Radio-controlled toy car racing with physics-based handling and hazard-strewn household tracks.",
+    "year": "1999",
+    "genre": "Racing",
+    "gogUrl": "https://www.gog.com/en/game/revolt",
+    "enabled": true
+  },
+  {
+    "id": "homm3",
+    "name": "Heroes of Might & Magic III",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/homm3_demo.wgb",
+    "coverUrl": "/covers/homm-3-box.jpg",
+    "description": "The legendary turn-based fantasy strategy game. One of the greatest games ever made.",
+    "year": "1999",
+    "genre": "Strategy",
+    "gogUrl": "https://www.gog.com/en/game/heroes_of_might_and_magic_3_complete_edition",
+    "enabled": true
+  },
+  {
+    "id": "starcraft",
+    "name": "StarCraft",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/starcraft_demo.wgb",
+    "coverUrl": "/covers/starcraft-box.jpg",
+    "description": "Blizzard's iconic real-time strategy. Three races, one galaxy.",
+    "year": "1998",
+    "genre": "RTS",
+    "enabled": true
+  },
+  {
+    "id": "diablo2",
+    "name": "Diablo II",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/d2_demo.wgb",
+    "coverUrl": "/covers/diablo-2-box.jpg",
+    "description": "The iconic action RPG that defined a genre. Fight your way through the darkness.",
+    "year": "2000",
+    "genre": "Action RPG",
+    "enabled": true
+  },
+  {
+    "id": "hp-demo",
+    "name": "Harry Potter and the Philosopher's Stone",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/harry-potter-demo.wgb",
+    "coverUrl": "/covers/harry-potter-demo-box.jpg",
+    "description": "KnowWonder's Unreal-Engine action-adventure. Explore Hogwarts, learn spells, play Quidditch.",
+    "year": "2001",
+    "genre": "Action-Adventure",
+    "enabled": true
+  },
+  {
+    "id": "porsche-demo",
+    "name": "Need for Speed: Porsche Unleashed",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/porsche-unleashed-demo.wgb",
+    "coverUrl": "/covers/porsche-unleashed-demo-box.jpg",
+    "description": "EA's love letter to Porsche: drive 80 years of models across the Evolution and Factory Driver modes.",
+    "year": "2000",
+    "genre": "Racing",
+    "enabled": true
+  },
+  {
+    "id": "nfsu-demo",
+    "name": "Need for Speed: Underground",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/nfs-underground-demo.wgb",
+    "coverUrl": "/covers/nfs-underground-demo-box.jpg",
+    "description": "EA Black Box's import-tuner racer: street races, drift and drag events through the neon-lit city at night.",
+    "year": "2003",
+    "genre": "Racing",
+    "enabled": true
+  },
+  {
+    "id": "max-payne-demo",
+    "name": "Max Payne",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/max-payne-demo.wgb",
+    "coverUrl": "/covers/max-payne-demo-box.jpg",
+    "description": "Remedy's noir third-person shooter with cinematic bullet-time gunfights and a graphic-novel story.",
+    "year": "2001",
+    "genre": "Third-Person Shooter",
+    "enabled": true
+  },
+  {
+    "id": "thps2-demo",
+    "name": "Tony Hawk's Pro Skater 2",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/thps2-demo.wgb",
+    "coverUrl": "/covers/thps2-demo-box.jpg",
+    "description": "Neversoft's genre-defining skateboarding game: combos, grinds, manuals and the addictive Career mode.",
+    "year": "2000",
+    "genre": "Sports",
+    "enabled": true
+  },
+  {
+    "id": "tiberian-sun",
+    "name": "Command & Conquer: Tiberian Sun",
+    "subtitle": "Freeware",
+    "wgbUrl": "/apps/tiberian-sun.wgb",
+    "coverUrl": "/covers/tiberian-sun-box.jpg",
+    "description": "Westwood's sci-fi real-time strategy: GDI versus the Brotherhood of Nod in the war over Tiberium.",
+    "year": "1999",
+    "genre": "RTS",
+    "enabled": true
+  },
+  {
+    "id": "ut-demo",
+    "name": "Unreal Tournament",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/ut_demo.wgb",
+    "coverUrl": "/covers/unreal-tournament-box.jpg",
+    "description": "Epic's fast, competitive arena shooter on the Unreal Engine: deathmatch, CTF and Domination.",
+    "year": "1999",
+    "genre": "FPS",
+    "enabled": true
+  },
+  {
+    "id": "airfix-dogfighter",
+    "name": "Airfix Dogfighter",
+    "subtitle": "Demo",
+    "wgbUrl": "/apps/airfix-dogfighter-demo.wgb",
+    "coverUrl": "/covers/airfix-dogfighter-box.jpg",
+    "description": "Toy Airfix warplanes wage a miniature air war through a boy's house — dogfight across the kitchen, garden and bedroom, strafing household hazards.",
+    "year": "2000",
+    "genre": "Arcade Flight",
+    "enabled": true
+  }
+]
